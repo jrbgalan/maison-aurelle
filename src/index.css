@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Maison Aurelle palette (HSL channels) */
+    --ricepaper: 22 41% 95%;
+    --oatlinen: 21 31% 87%;
+    --sakura: 8 44% 88%;
+    --rose: 6 30% 70%;
+    --sage: 86 10% 71%;
+    --mocha: 14 15% 20%;
+    --brass: 21 28% 58%;
+    --espresso: 14 15% 10%;
+
+    --background: 22 41% 95%;
+    --foreground: 14 15% 20%;
+    --card: 21 31% 87%;
+    --card-foreground: 14 15% 20%;
+    --popover: 22 41% 95%;
+    --popover-foreground: 14 15% 20%;
+    --primary: 14 15% 20%;
+    --primary-foreground: 22 41% 95%;
+    --secondary: 21 31% 87%;
+    --secondary-foreground: 14 15% 20%;
+    --muted: 21 31% 87%;
+    --muted-foreground: 14 10% 40%;
+    --accent: 8 44% 88%;
+    --accent-foreground: 14 15% 20%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 21 22% 80%;
+    --input: 21 22% 80%;
+    --ring: 21 28% 58%;
+    --chart-1: 21 28% 58%;
+    --chart-2: 6 30% 70%;
+    --chart-3: 86 10% 71%;
+    --chart-4: 8 44% 88%;
+    --chart-5: 14 15% 20%;
+    --radius: 1rem;
+
+    --font-heading: "Cormorant Garamond", ui-serif, serif;
+    --font-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Cormorant Garamond", ui-serif, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+    --sidebar-background: 22 41% 95%;
+    --sidebar-foreground: 14 15% 20%;
+    --sidebar-primary: 14 15% 20%;
+    --sidebar-primary-foreground: 22 41% 95%;
+    --sidebar-accent: 21 31% 87%;
+    --sidebar-accent-foreground: 14 15% 20%;
+    --sidebar-border: 21 22% 80%;
+    --sidebar-ring: 21 28% 58%;
+  }
+
+  .dark {
+    --background: 14 15% 10%;
+    --foreground: 22 41% 95%;
+    --card: 14 15% 14%;
+    --card-foreground: 22 41% 95%;
+    --popover: 14 15% 10%;
+    --popover-foreground: 22 41% 95%;
+    --primary: 22 41% 95%;
+    --primary-foreground: 14 15% 20%;
+    --secondary: 14 12% 18%;
+    --secondary-foreground: 22 41% 95%;
+    --muted: 14 12% 18%;
+    --muted-foreground: 21 10% 65%;
+    --accent: 8 44% 88%;
+    --accent-foreground: 14 15% 20%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 14 12% 22%;
+    --input: 14 12% 22%;
+    --ring: 21 28% 58%;
+    --sidebar-background: 14 15% 10%;
+    --sidebar-foreground: 22 41% 95%;
+    --sidebar-primary: 22 41% 95%;
+    --sidebar-primary-foreground: 14 15% 20%;
+    --sidebar-accent: 14 12% 18%;
+    --sidebar-accent-foreground: 22 41% 95%;
+    --sidebar-border: 14 12% 22%;
+    --sidebar-ring: 21 28% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "liga", "kern";
+  }
+  ::selection { background: hsl(var(--sakura)); color: hsl(var(--mocha)); }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: hsl(var(--brass));
+  }
+  .display {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: hsl(var(--mocha));
+    line-height: 1.05;
+  }
+  .arch-mask {
+    border-radius: 999px 999px 28px 28px;
+    overflow: hidden;
+  }
+  .hairline {
+    background-color: hsl(var(--brass) / 0.5);
+  }
+  .brass-border {
+    border-color: hsl(var(--brass) / 0.45);
+  }
+  .glow-radial {
+    background: radial-gradient(60% 60% at 50% 40%, hsl(var(--sakura) / 0.7), hsl(var(--ricepaper) / 0) 70%);
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--brass)), 0 0 0 6px hsl(var(--background));
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .input-field {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--brass) / 0.35);
+    background: hsl(var(--ricepaper) / 0.7);
+    padding: 0.7rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: hsl(var(--mocha));
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .input-field::placeholder { color: hsl(var(--mocha) / 0.4); }
+  .input-field:focus {
+    outline: none;
+    border-color: hsl(var(--brass));
+    box-shadow: 0 0 0 3px hsl(var(--sakura) / 0.5);
+  }
+}

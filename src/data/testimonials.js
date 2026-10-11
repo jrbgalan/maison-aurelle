@@ -1,0 +1,38 @@
+export const testimonials = [
+  {
+    id: "t1",
+    name: "Hana J.",
+    treatment: "Facial & Skin Rejuvenation",
+    rating: 5,
+    quote: "I left feeling like I had slept for a week. The glow lasted for days — friends kept asking what I had changed. Nothing. Everything.",
+    location: "Seoul",
+    image: "https://images.unsplash.com/photo-1600481176431-47ad2ab2745d?auto=format&fit=crop&q=80&w=600",
+  },
+  {
+    id: "t2",
+    name: "Mei L.",
+    treatment: "Injectables",
+    rating: 5,
+    quote: "The most natural result I have ever had. Dr. Mori understood 'rested, not changed' perfectly. No one can tell — they just say I look well.",
+    location: "Singapore",
+    image: "https://images.unsplash.com/photo-1562904403-a5106bef8319?auto=format&fit=crop&q=80&w=600",
+  },
+  {
+    id: "t3",
+    name: "Yuki T.",
+    treatment: "Laser & Resurfacing",
+    rating: 5,
+    quote: "My acne scars have quietly faded. The room itself feels like a retreat — soft light, linen, the scent of pale flowers. Healing, not treatment.",
+    location: "Tokyo",
+    image: "https://images.unsplash.com/photo-1668876220458-805bc60d6046?auto=format&fit=crop&q=80&w=600",
+  },
+  {
+    id: "t4",
+    name: "Sora K.",
+    treatment: "Body Contouring",
+    rating: 5,
+    quote: "Three months in and the silhouette I wanted is simply there. No drama, no incisions — just patient, beautiful refinement.",
+    location: "Busan",
+    image: "https://images.unsplash.com/photo-1541823709867-1b206113eafd?auto=format&fit=crop&q=80&w=600",
+  },
+];
