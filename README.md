@@ -4,20 +4,22 @@
 [![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=flat-square&logo=openai)](https://openai.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-A digital sanctuary and high-end atelier experience for **Maison Aurelle**, embodying quiet architectural luxury in the spirit of a Seoul–Kyoto spa. Crafted with contemporary web standards, editorial typography, and thoughtful digital interactions.
+A digital sanctuary and high-end atelier experience for **Maison Aurelle**, embodying quiet architectural luxury in the spirit of a Seoul–Kyoto spa. Crafted with contemporary web standards, editorial typography, TypeScript, and thoughtful digital interactions.
 
 ---
 
 ## Overview
 
-Maison Aurelle is designed to translate the sensory calm and exacting precision of high-tier skin and wellness treatments into a fluid digital experience. Built on modern web architecture with Next.js App Router, it unites editorial visual pacing, rich interactive components, and an intelligent concierge powered by AI.
+Maison Aurelle is designed to translate the sensory calm and exacting precision of high-tier skin and wellness treatments into a fluid digital experience. Built on modern web architecture with Next.js App Router and full TypeScript support, it unites editorial visual pacing, rich interactive components, and an intelligent concierge powered by AI.
 
 ---
 
 ## Key Features
 
+- **TypeScript-First Architecture**: End-to-end typed domain models, API route contracts, and component prop definitions.
 - **Next.js 14 App Router Architecture**: Optimized server-rendered pages, static generation, streamlined routing, and performant asset loading.
 - **AI Atelier Concierge**: Intelligent virtual concierge powered by OpenAI (`gpt-4o-mini`), calibrated with bespoke brand knowledge, real-time consultation guidance, and graceful offline fallback support.
 - **Editorial Photography & Dynamic Curation**: High-definition, editorial-grade visual assets across all treatments, specialists, journal essays, and gallery showcases integrated with Unsplash.
@@ -32,6 +34,7 @@ Maison Aurelle is designed to translate the sensory calm and exacting precision 
 
 | Layer | Technology |
 | :--- | :--- |
+| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
 | **Framework** | [Next.js 14 (App Router)](https://nextjs.org/) |
 | **Core Library** | [React 18](https://react.dev/) |
 | **Styling** | [Tailwind CSS](https://tailwindcss.com/), CSS Custom Properties |
@@ -49,7 +52,7 @@ Maison Aurelle is designed to translate the sensory calm and exacting precision 
 ```plaintext
 maison-aurelle/
 ├── src/
-│   ├── app/                      # Next.js App Router
+│   ├── app/                      # Next.js App Router (TypeScript)
 │   │   ├── about/                # Atelier story & philosophy
 │   │   ├── api/                  # API routes (chat, appointments, images)
 │   │   ├── booking/              # Consultation reservation page
@@ -60,19 +63,26 @@ maison-aurelle/
 │   │   ├── specialists/          # Specialist directory & profiles
 │   │   ├── treatments/           # Signature treatments & detail views
 │   │   ├── globals.css           # Design tokens, typography & themes
-│   │   ├── layout.jsx            # Global shell, navigation & footer
-│   │   ├── not-found.jsx         # Custom 404 error experience
-│   │   └── page.jsx              # Atelier flagship home page
-│   ├── components/               # Modular UI components
+│   │   ├── layout.tsx            # Global shell, navigation & footer
+│   │   ├── not-found.tsx         # Custom 404 error experience
+│   │   └── page.tsx              # Atelier flagship home page
+│   ├── components/               # Modular UI components (.tsx)
 │   │   ├── chat/                 # AI Concierge floating widget
 │   │   ├── home/                 # Flagship landing sections
 │   │   ├── layout/               # Navigation bar & luxury footer
 │   │   ├── shared/               # Reusable cards, sliders & badges
 │   │   └── ui/                   # Accessible Radix & styled primitives
-│   ├── data/                     # Curated treatments, specialists & content
-│   └── lib/                      # Utilities, Unsplash helper & clients
+│   ├── data/                     # Typed treatments, specialists & content (.ts)
+│   ├── hooks/                    # Reusable React hooks (.ts)
+│   ├── lib/                      # Utilities, Unsplash helper & clients (.ts)
+│   └── types/                    # Domain TypeScript interfaces (.ts)
 ├── public/                       # Static public assets
 ├── LICENSE                       # MIT License
+├── tsconfig.json                 # TypeScript compiler configuration
+├── next.config.mjs               # Next.js configuration
+├── tailwind.config.js            # Tailwind theme tokens & fonts
+└── package.json                  # Dependencies & scripts
+```
 ├── next.config.mjs               # Next.js configuration
 ├── tailwind.config.js            # Tailwind theme tokens & fonts
 └── package.json                  # Dependencies & scripts
