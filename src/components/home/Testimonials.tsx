@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
+import SakuraBranchBackground from "@/components/shared/SakuraBranchBackground";
 import { testimonials } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
 
@@ -18,10 +19,19 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="bg-ricepaper py-24 sm:py-32">
-      <div className="mx-auto max-w-[1200px] px-6">
+    <section className="relative overflow-hidden bg-ricepaper py-24 sm:py-32">
+      {/* Decorative watercolor sakura branch background layer with smooth edge dissolve */}
+      <SakuraBranchBackground />
+
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6">
         <SectionHeader eyebrow="In Their Words" title="Quiet confidence, spoken softly" />
+
         <div className="relative mt-14 min-h-[260px]">
+          {/* Soft ivory radial glow behind text card for pristine WCAG AA contrast */}
+          <div className="pointer-events-none absolute inset-0 -top-6 -bottom-6 flex items-center justify-center">
+            <div className="h-full w-full max-w-2xl rounded-full bg-ricepaper/75 blur-3xl dark:bg-espresso/70" />
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={t.id}
@@ -29,10 +39,10 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={reduce ? { opacity: 0 } : { opacity: 0, y: -16 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-auto max-w-3xl text-center"
+              className="relative z-10 mx-auto max-w-3xl rounded-3xl border border-brass/15 bg-ricepaper/70 p-8 sm:p-12 text-center shadow-soft backdrop-blur-md dark:border-brass/20 dark:bg-espresso/60"
             >
               <Quote className="mx-auto mb-6 h-8 w-8 text-brass/60" />
-              <p className="display text-2xl font-light italic leading-relaxed text-mocha sm:text-3xl">
+              <p className="display text-2xl font-light italic leading-relaxed text-mocha sm:text-3xl dark:text-ricepaper">
                 “{t.quote}”
               </p>
               <div className="mt-8 flex items-center justify-center gap-1 text-brass">
@@ -40,14 +50,14 @@ export default function Testimonials() {
                   <Star key={d} className="h-4 w-4 fill-brass" />
                 ))}
               </div>
-              <p className="mt-4 eyebrow text-mocha/60">
+              <p className="mt-4 eyebrow text-mocha/60 dark:text-ricepaper/60">
                 {t.name} · {t.treatment} · {t.location}
               </p>
             </motion.blockquote>
           </AnimatePresence>
         </div>
 
-        <div className="mt-10 flex justify-center gap-2">
+        <div className="relative z-10 mt-10 flex justify-center gap-2">
           {testimonials.map((item, d) => (
             <button
               key={item.id}
