@@ -188,13 +188,14 @@ export default function SakuraPetals({
   return (
     <div
       className={cn(
-        "pointer-events-none fixed inset-0 z-20 overflow-hidden select-none transition-opacity duration-[2000ms] ease-out",
+        "pointer-events-none fixed inset-0 z-20 overflow-hidden select-none transition-opacity ease-out",
         mounted ? "opacity-100" : "opacity-0",
         className
       )}
       aria-hidden="true"
       style={{
         perspective: "600px",
+        transitionDuration: "2000ms",
       }}
     >
       {petals.map((petal) => (
