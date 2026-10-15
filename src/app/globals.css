@@ -158,3 +158,48 @@
   }
 }
 
+/* Gentle falling sakura petal keyframes (pure GPU transform & opacity) */
+@keyframes sakuraFall {
+  0% {
+    transform: translate3d(var(--x-start, 0vw), -30px, 0) rotate(var(--rot-start, 0deg)) rotateX(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  6% {
+    opacity: var(--petal-opacity, 0.7);
+  }
+  25% {
+    transform: translate3d(calc(var(--x-start, 0vw) + var(--drift, 40px) * 0.7), 25vh, 0) rotate(calc(var(--rot-start, 0deg) + 55deg)) rotateX(45deg) rotateY(25deg);
+  }
+  50% {
+    transform: translate3d(calc(var(--x-start, 0vw) - var(--drift, 40px) * 0.5), 50vh, 0) rotate(calc(var(--rot-start, 0deg) + 120deg)) rotateX(80deg) rotateY(55deg);
+  }
+  75% {
+    transform: translate3d(calc(var(--x-start, 0vw) + var(--drift, 40px) * 0.9), 75vh, 0) rotate(calc(var(--rot-start, 0deg) + 195deg)) rotateX(35deg) rotateY(85deg);
+  }
+  94% {
+    opacity: var(--petal-opacity, 0.7);
+  }
+  100% {
+    transform: translate3d(calc(var(--x-start, 0vw) + var(--drift, 40px) * 0.2), 105vh, 0) rotate(calc(var(--rot-start, 0deg) + 280deg)) rotateX(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+  animation: sakuraFall var(--duration, 20s) linear var(--delay, 0s) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petal {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
+

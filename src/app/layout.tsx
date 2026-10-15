@@ -1,5 +1,6 @@
 import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
+import SakuraPetals from "@/components/shared/SakuraPetals";
 import { Toaster } from "sonner";
 
 export const metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen bg-ricepaper text-mocha font-body antialiased selection:bg-sakura selection:text-mocha">
+        <SakuraPetals />
         {children}
         <ChatWidget />
         <Toaster position="bottom-left" richColors />
