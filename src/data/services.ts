@@ -120,8 +120,8 @@ export const services: Service[] = [
     duration: "60 – 90 minutes",
     recovery: "No downtime",
     priceRange: "$500 – $1,200",
-    image: "https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?auto=format&fit=crop&q=80&w=1080",
-    featured: false,
+    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=1080",
+    featured: true,
     faq: [
       { q: "When will I notice changes?", a: "Gradual refinement appears over 4–12 weeks as the body naturally clears treated tissue." },
       { q: "Is it comfortable?", a: "Most guests read or rest during the session with only mild cooling sensation." },
@@ -149,8 +149,8 @@ export const services: Service[] = [
     duration: "60 minutes",
     recovery: "No downtime",
     priceRange: "$160 – $280",
-    image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=1080",
-    featured: false,
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1080",
+    featured: true,
     faq: [
       { q: "Is this suitable for thinning hair?", a: "Yes — our protocol is designed to support density and reduce shedding over time." },
       { q: "How long until I see results?", a: "Most guests notice reduced shedding in 6 weeks and improved density by 3 months." },
@@ -178,8 +178,8 @@ export const services: Service[] = [
     duration: "45 – 75 minutes",
     recovery: "No downtime",
     priceRange: "$90 – $220",
-    image: "https://images.unsplash.com/photo-1581003250898-36050e78fcd3?auto=format&fit=crop&q=80&w=1080",
-    featured: false,
+    image: "https://images.unsplash.com/photo-1583001809873-a128495da465?auto=format&fit=crop&q=80&w=1080",
+    featured: true,
     faq: [
       { q: "How long does a lash lift last?", a: "A lift holds its shape for 6–8 weeks with proper aftercare." },
       { q: "Will brow tint look natural?", a: "Always — we match to your natural tone for a soft, defined frame." },
